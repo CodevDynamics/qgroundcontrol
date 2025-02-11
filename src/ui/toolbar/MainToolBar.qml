@@ -113,9 +113,18 @@ Rectangle {
         }
     }
 
+    Loader {
+        anchors.top:        parent.top
+        anchors.bottom:     parent.bottom
+        anchors.right:      brandingLogo.left
+        anchors.margins:    ScreenTools.defaultFontPixelHeight * 0.66
+        source:             QGroundControl.m2Manager ? "qrc:/toolbar/M2LinkIndicator.qml" : ""
+    }
+
     //-------------------------------------------------------------------------
     //-- Branding Logo
     Image {
+        id:                     brandingLogo
         anchors.right:          parent.right
         anchors.top:            parent.top
         anchors.bottom:         parent.bottom

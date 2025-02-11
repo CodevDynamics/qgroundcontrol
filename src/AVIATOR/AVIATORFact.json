@@ -1,0 +1,56 @@
+{
+    "version":      1,
+    "fileType":  "FactMetaData",
+    "QGC.MetaData.Facts":
+[
+{
+    "name":             "RC_BAT_VOLTAGE",
+    "shortDesc":        "Battery Voltage",
+    "type":             "float",
+    "decimalPlaces":    2,
+    "units":            "V"
+},
+{
+    "name":             "RC_BAT_REMAINING",
+    "shortDesc":        "Battery Remaining",
+    "type":             "float",
+    "decimalPlaces":    1,
+    "units":            "%"
+},
+{
+    "name":             "RC_VERSION",
+    "shortDesc":        "Version",
+    "type":             "float",
+    "decimalPlaces":    0,
+    "units":            ""
+},
+{
+    "name":             "RC_TEMPERATURE",
+    "shortDesc":        "Temperature",
+    "type":             "float",
+    "decimalPlaces":    1,
+    "units":            "degC"
+},
+{
+    "name":             "RC_USB_OUT",
+    "shortDesc":        "USB Out",
+    "type":             "float",
+    "decimalPlaces":    0,
+    "units":            ""
+},
+{
+    "name":             "RC_BAT_CURRENT",
+    "shortDesc":        "Battery Current",
+    "type":             "float",
+    "decimalPlaces":    1,
+    "units":            "A"
+},
+{
+    "name":             "RC_BAT_CHARGING",
+    "shortDesc":        "Battery Charging",
+    "type":             "float",
+    "decimalPlaces":    0,
+    "units":            ""
+}
+]
+}

@@ -89,7 +89,7 @@ int WindowsCrtReportHook(int reportType, char* message, int* returnValue)
 #include "PairingManager.h"
 #endif
 #if !defined(NO_SERIAL_LINK)
-#include "qserialport.h"
+#include <QSerialPort>
 #endif
 
 static jobject _class_loader = nullptr;
@@ -136,11 +136,21 @@ gst_android_init(JNIEnv* env, jobject context)
 
 //-----------------------------------------------------------------------------
 static const char kJniClassName[] {"org/mavlink/qgroundcontrol/QGCActivity"};
+static void jniDeviceHasDisconnected(JNIEnv *, jobject, jlong) {}
+static void jniDeviceNewData(JNIEnv *, jobject, jlong, jbyteArray) {}
+static void jniDeviceException(JNIEnv *, jobject, jlong, jstring) {}
+static void jniLogDebug(JNIEnv *, jobject, jstring) {}
+static void jniLogWarning(JNIEnv *, jobject, jstring) {}
 
 void setNativeMethods(void)
 {
     JNINativeMethod javaMethods[] {
-        {"nativeInit", "()V", reinterpret_cast<void *>(gst_android_init)}
+        {"nativeInit", "()V", reinterpret_cast<void *>(gst_android_init)},
+        {"nativeDeviceHasDisconnected", "(J)V",                     reinterpret_cast<void *>(jniDeviceHasDisconnected)},
+        {"nativeDeviceNewData",         "(J[B)V",                   reinterpret_cast<void *>(jniDeviceNewData)},
+        {"nativeDeviceException",       "(JLjava/lang/String;)V",   reinterpret_cast<void *>(jniDeviceException)},
+        {"qgcLogDebug",                 "(Ljava/lang/String;)V",    reinterpret_cast<void *>(jniLogDebug)},
+        {"qgcLogWarning",               "(Ljava/lang/String;)V",    reinterpret_cast<void *>(jniLogWarning)}
     };
 
     QAndroidJniEnvironment jniEnv;
@@ -186,9 +196,10 @@ jint JNI_OnLoad(JavaVM* vm, void* reserved)
     gst_amc_jni_set_java_vm(vm);
 #endif
 
- #if !defined(NO_SERIAL_LINK)
-    QSerialPort::setNativeMethods();
- #endif
+ // #if !defined(NO_SERIAL_LINK)
+ //    QSerialPort::setNativeMethods();
+ // #endif
+    
 
     JoystickAndroid::setNativeMethods();
 

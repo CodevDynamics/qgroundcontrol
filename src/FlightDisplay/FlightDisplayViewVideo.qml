@@ -143,6 +143,7 @@ Item {
             // we don't load a QGCVideoBackground object when video is disabled. This prevents any video rendering
             // code from running. Setting QGCVideoBackground.receiver = null does not work to prevent any
             // video OpenGL from being generated. Hence the Loader to completely remove it.
+            id: videoContentLoader
             height:             parent.getHeight()
             width:              parent.getWidth()
             anchors.centerIn:   parent
@@ -191,6 +192,7 @@ Item {
                 opacity:        _camera ? (_camera.thermalMode === QGCCameraControl.THERMAL_BLEND ? _camera.thermalOpacity / 100 : 1.0) : 0
             }
         }
+
         //-- Zoom
         PinchArea {
             id:             pinchZoom
@@ -211,6 +213,33 @@ Item {
                 }
             }
             property int zoom: 0
+        }
+
+        QGCLabel {
+            text: qsTr("Double-click to exit full screen")
+            font.pointSize: ScreenTools.largeFontPointSize
+            visible: QGroundControl.videoManager.fullScreen
+            anchors.centerIn: parent
+
+            onVisibleChanged: {
+                if (visible) {
+                    labelAnimation.start()
+                }
+            }
+
+            PropertyAnimation on opacity {
+                id: labelAnimation
+                duration: 10000
+                from: 1.0
+                to: 0.0
+                easing.type: Easing.InExpo
+            }
+        }
+
+        //-- Camera Extra Controls QML
+        Loader {
+            anchors.fill: parent
+            source: _camera ? _camera.extraControlsQml : ""
         }
     }
 }

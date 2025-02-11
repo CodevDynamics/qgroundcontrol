@@ -830,6 +830,7 @@ VideoManager::_restartAllVideos()
 {
     _restartVideo(0);
     _restartVideo(1);
+    emit aspectRatioChanged();
 }
 
 //----------------------------------------------------------------------------------------

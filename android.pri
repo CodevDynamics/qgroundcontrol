@@ -1,6 +1,6 @@
 QT += androidextras
 
-include($$PWD/libs/qtandroidserialport/src/qtandroidserialport.pri)
+# include($$PWD/libs/qtandroidserialport/src/qtandroidserialport.pri)
 
 ANDROID_PACKAGE_SOURCE_DIR          = $$OUT_PWD/ANDROID_PACKAGE_SOURCE_DIR  # Tells Qt location of package files for build
 ANDROID_PACKAGE_QGC_SOURCE_DIR      = $$PWD/android                         # Original location of QGC package files

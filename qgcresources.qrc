@@ -6,6 +6,10 @@
         <file alias="NanumGothic-Bold">resources/fonts/NanumGothic-Bold.ttf</file>
     </qresource>
     <qresource prefix="/res">
+        <file alias="no.svg">resources/no.svg</file>
+        <file alias="yes.svg">resources/yes.svg</file>
+        <file alias="PairingButton.svg">resources/PairingButton.svg</file>
+        <file alias="aircraftBindTip.png">resources/aircraftBindTip.png</file>
         <file alias="action.svg">resources/action.svg</file>
         <file alias="AntennaRC">resources/Antenna_RC.svg</file>
         <file alias="AntennaT">resources/Antenna_T.svg</file>

@@ -19,6 +19,7 @@
         <file alias="VTOLModeIndicator.qml">src/ui/toolbar/VTOLModeIndicator.qml</file>
         <file alias="APMSupportForwardingIndicator.qml">src/ui/toolbar/APMSupportForwardingIndicator.qml</file>
         <file alias="GimbalIndicator.qml">src/ui/toolbar/GimbalIndicator.qml</file>
+        <file alias="M2LinkIndicator.qml">src/M2Link/M2LinkIndicator.qml</file>
     </qresource>
     <qresource prefix="/checklists">
         <file alias="DefaultChecklist.qml">src/FlightDisplay/DefaultChecklist.qml</file>
@@ -29,6 +30,8 @@
         <file alias="SubChecklist.qml">src/FlightDisplay/SubChecklist.qml</file>
     </qresource>
     <qresource prefix="/qml">
+        <file alias="CodevCameraVisual.qml">src/Camera/CodevCameraVisual.qml</file>
+        <file alias="M2Settings.qml">src/M2Link/M2Settings.qml</file>
         <file alias="QGroundControl/Controls/HeightIndicator.qml">src/QmlControls/HeightIndicator.qml</file>
         <file alias="QGroundControl/Controls/QGCDynamicObjectManager.qml">src/QmlControls/QGCDynamicObjectManager.qml</file>
         <file alias="QGroundControl/Controls/QGCOptionsComboBox.qml">src/QmlControls/QGCOptionsComboBox.qml</file>
@@ -80,6 +83,13 @@
         <file alias="PX4FlowSensor.qml">src/VehicleSetup/PX4FlowSensor.qml</file>
         <file alias="QGCInstrumentWidget.qml">src/FlightMap/Widgets/QGCInstrumentWidget.qml</file>
         <file alias="QGCInstrumentWidgetAlternate.qml">src/FlightMap/Widgets/QGCInstrumentWidgetAlternate.qml</file>
+        <file alias="QGroundControl/Controls/PseudocolorBar.qml">src/QmlControls/PseudocolorBar.qml</file>
+        <file alias="QGroundControl/Controls/TouchSelectArea.qml">src/QmlControls/TouchSelectArea.qml</file>
+        <file alias="QGroundControl/Controls/ToolRadioButton.qml">src/QmlControls/ToolRadioButton.qml</file>
+        <file alias="QGroundControl/Controls/AreaFrame.qml">src/QmlControls/AreaFrame.qml</file>
+        <file alias="QGroundControl/Controls/TargetObjectRectangles.qml">src/QmlControls/TargetObjectRectangles.qml</file>
+        <file alias="QGroundControl/Controls/QGCBusyIndicator.qml">src/QmlControls/QGCBusyIndicator.qml</file>
+        <file alias="QGroundControl/Controls/QGCDelayButton.qml">src/QmlControls/QGCDelayButton.qml</file>
         <file alias="QGroundControl/Controls/AnalyzePage.qml">src/AnalyzeView/AnalyzePage.qml</file>
         <file alias="QGroundControl/Controls/AppMessages.qml">src/QmlControls/AppMessages.qml</file>
         <file alias="QGroundControl/Controls/AltModeDialog.qml">src/QmlControls/AltModeDialog.qml</file>
@@ -296,6 +306,7 @@
         <file alias="OfflineVehicleFirstRunPrompt.qml">src/FirstRunPromptDialogs/OfflineVehicleFirstRunPrompt.qml</file>
     </qresource>
     <qresource prefix="/json">
+        <file alias="AVIATORFact.json">src/AVIATOR/AVIATORFact.json</file>
         <file alias="ADSBVehicleManager.SettingsGroup.json">src/Settings/ADSBVehicleManager.SettingsGroup.json</file>
         <file alias="APMMavlinkStreamRate.SettingsGroup.json">src/Settings/APMMavlinkStreamRate.SettingsGroup.json</file>
         <file alias="App.SettingsGroup.json">src/Settings/App.SettingsGroup.json</file>

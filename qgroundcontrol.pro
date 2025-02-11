@@ -256,7 +256,8 @@ QT += \
     widgets \
     xml \
     texttospeech \
-    core-private
+    core-private \
+    serialport
 
 # Multimedia only used if QVC is enabled
 !contains (DEFINES, QGC_DISABLE_UVC) {
@@ -267,8 +268,6 @@ QT += \
 AndroidBuild || iOSBuild {
     # Android and iOS don't unclude these
 } else {
-    QT += \
-        serialport \
 }
 
 contains(DEFINES, QGC_ENABLE_BLUETOOTH) {
@@ -420,6 +419,8 @@ INCLUDEPATH += \
     src/ui/px4_configuration \
     src/ui/toolbar \
     src/ui/uas \
+    src/M2Link \
+    src/AVIATOR \
 
 contains (DEFINES, QGC_ENABLE_PAIRING) {
     INCLUDEPATH += \
@@ -765,6 +766,10 @@ HEADERS += \
     src/uas/UASMessageHandler.h \
     src/AnalyzeView/GeoTagController.h \
     src/AnalyzeView/ExifParser.h \
+    src/M2Link/M2Manager.h \
+    src/Camera/TargetObject.h \
+    src/Camera/CodevCameraControl.h \
+    src/AVIATOR/AVIATORInterface.h \
 
 contains (DEFINES, QGC_ENABLE_PAIRING) {
     HEADERS += \
@@ -1026,6 +1031,10 @@ SOURCES += \
     src/uas/UASMessageHandler.cc \
     src/AnalyzeView/GeoTagController.cc \
     src/AnalyzeView/ExifParser.cc \
+    src/M2Link/M2Manager.cpp \
+    src/Camera/TargetObject.cpp \
+    src/Camera/CodevCameraControl.cc \
+    src/AVIATOR/AVIATORInterface.cpp \
 
 contains (DEFINES, QGC_ENABLE_PAIRING) {
     SOURCES += \
