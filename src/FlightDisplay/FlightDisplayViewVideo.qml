@@ -239,6 +239,7 @@ Item {
         //-- Camera Extra Controls QML
         Loader {
             anchors.fill: parent
+            visible: pipState.state === pipState.fullState && !QGroundControl.videoManager.fullScreen
             source: _camera ? _camera.extraControlsQml : ""
         }
     }
