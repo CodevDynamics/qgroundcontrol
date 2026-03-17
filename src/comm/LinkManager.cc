@@ -536,25 +536,7 @@ void LinkManager::_updateAutoConnectLinks(void)
 #ifndef NO_SERIAL_LINK
     QStringList                 currentPorts;
     QList<QGCSerialPortInfo>    portList;
-#ifdef __android__
-    // Android builds only support a single serial connection. Repeatedly calling availablePorts after that one serial
-    // port is connected leaks file handles due to a bug somewhere in android serial code. In order to work around that
-    // bug after we connect the first serial port we stop probing for additional ports.
-    if (!_isSerialPortConnected()) {
-        SerialConfiguration *serialConfig = new SerialConfiguration(tr("115200 on %1 (AutoConnect)").arg("/dev/ttyS4"));
-        serialConfig->setBaud(115200);
-        serialConfig->setDynamic(true);
-        serialConfig->setPortName("/dev/ttyS4");
-        SharedLinkConfigurationPtr sharedConfig(serialConfig);
-        createConnectedLink(sharedConfig, false);
-        portList = QGCSerialPortInfo::availablePorts();
-    }
-    else {
-        qDebug() << "Skipping serial port list";
-    }
-#else
     portList = QGCSerialPortInfo::availablePorts();
-#endif
 
     // Iterate Comm Ports
     for (const QGCSerialPortInfo& portInfo: portList) {

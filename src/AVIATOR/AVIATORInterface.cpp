@@ -39,9 +39,9 @@ AVIATORInterface::AVIATORInterface(QObject* parent)
     _addFact(&_batteryChargingFact, _batteryChargingFactName);
 
 #if defined (Q_OS_ANDROID)
-    QObject::connect(this, &AVIATORInterface::bytesReceived, this, &AVIATORInterface::_handlebytesReceived);
-    QObject::connect(this, &AVIATORInterface::write, this, &AVIATORInterface::_writeBytes);
-    _init();
+    // QObject::connect(this, &AVIATORInterface::bytesReceived, this, &AVIATORInterface::_handlebytesReceived);
+    // QObject::connect(this, &AVIATORInterface::write, this, &AVIATORInterface::_writeBytes);
+    // _init();
 #endif
 }
 
